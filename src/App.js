@@ -16,11 +16,11 @@ class App extends Component {
         <NavBar />
         <div className="content">
           <Switch>
-          <Route path="/products" component={Products} />
-          <Route path="/posts" component={Posts} />
-          <Route path="/admin" component={Dashboard} />
-          <Route path="/" component={Home} />
-          {/* <Route path="/" exact component={Home} /> */}
+            <Route path="/products/:id" component={ ProductDetails } />
+            <Route path="/products" render={ props => <Products sortBy="newest" {...props} /> } />
+            <Route path="/posts/:year/:months" component={Posts} />
+            <Route path="/admin" component={Dashboard} />
+            <Route path="/" component={Home} />
           </Switch>
         </div>
       </div>
